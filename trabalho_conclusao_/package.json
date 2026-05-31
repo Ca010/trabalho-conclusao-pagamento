@@ -1,0 +1,14 @@
+{
+  "name": "trabalho-conclusao",
+  "version": "1.0.0",
+  "description": "Exercício de serviço de pagamento com testes Mocha e Mochawesome",
+  "main": "src/pagamento.js",
+  "scripts": {
+    "test": "mocha --reporter mochawesome"
+  },
+  "type": "module",
+  "dependencies": {
+    "mocha": "^11.7.5",
+    "mochawesome": "^7.1.4"
+  }
+}
