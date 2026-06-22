@@ -28,14 +28,17 @@ jobs:
         with:
           node-version: 20
           cache: 'npm'
+          cache-dependency-path: trabalho_conclusao_/package-lock.json
 
-      # Instala as dependências limpas do projeto usando o package-lock.json
+      # Instala as dependências limpas do projeto usando o package-lock.json da subpasta
       - name: Instalar dependências
         run: npm ci
+        working-directory: trabalho_conclusao_
 
       # Executa a bateria de testes automatizados e gera o relatório Mochawesome
       - name: Executar testes automatizados
         run: npm test
+        working-directory: trabalho_conclusao_
 
       # Armazena e publica o relatório de testes na pipeline como artefato
       # if: always() garante a publicação do relatório mesmo que ocorram falhas nos testes
@@ -44,5 +47,5 @@ jobs:
         if: always()
         with:
           name: mochawesome-report
-          path: mochawesome-report/
+          path: trabalho_conclusao_/mochawesome-report/
           retention-days: 30
